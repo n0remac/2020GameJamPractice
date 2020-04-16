@@ -1,10 +1,13 @@
 # 2020GameJamPractice
-Practice project for https://pythondiscord.com/pages/events/game-jam-2020/
 
-Before the Game Jam starts we should practice our work flow with this tuttorial:
-https://arcade.academy/examples/platform_tutorial/index.html
+## About
 
-Step 1 and 2 have been completed. If you want to use pipenv here are instructions to integrate it with pycharm:
-https://www.jetbrains.com/help/pycharm/pipenv.html#
+This repository serves as team practice for the [Python Discord](https://pythondiscord.com/)'s [Game Jam 2020](https://pythondiscord.com/pages/events/game-jam-2020/).
 
-Lets complete step 3 - 5 in separate branches. Each of us should take a separate branch. 
+The project is a sample project, built off a [basic starter tutorial](https://arcade.academy/examples/platform_tutorial/index.html) for the [Arcade](https://pypi.org/project/arcade/) game framework.
+
+## Useful Links
+
+1. [Using Pipenv with PyCharm](https://www.jetbrains.com/help/pycharm/pipenv.html)
+
+2. [How to use PipEnv](https://www.youtube.com/watch?v=zDYL22QNiWk) by Corey Schafer
