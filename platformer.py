@@ -11,7 +11,7 @@ SCREEN_TITLE = "Platformer"
 # Constants used to scale our sprites from their original size
 CHARACTER_SCALING = 1
 TILE_SCALING = 1
-COIN_SCALING = 0.5
+COIN_SCALING = 1
 
 # Movement speed of player, in pixels per frame
 PLAYER_MOVEMENT_SPEED = 5
@@ -89,6 +89,13 @@ class MyGame(arcade.Window):
             wall.position = coordinate
             self.wall_list.append(wall)
 
+        # Use a loop to place some coins for our character to pick up
+        for x in range(128, 1250, 256):
+            coin = arcade.Sprite("images/Items/platformPack_item003.png", COIN_SCALING)
+            coin.center_x = x
+            coin.center_y = 96
+            self.coin_list.append(coin)
+
         # Create the 'physics engine'
         self.physics_engine = arcade.PhysicsEnginePlatformer(self.player_sprite,
                                                              self.wall_list,
@@ -129,6 +136,15 @@ class MyGame(arcade.Window):
 
         # Move the player with the physics engine
         self.physics_engine.update()
+
+         # See if we hit any coins
+        coin_hit_list = arcade.check_for_collision_with_list(self.player_sprite,
+                                                             self.coin_list)
+
+        # Loop through each coin we hit (if any) and remove it
+        for coin in coin_hit_list:
+            # Remove the coin
+            coin.remove_from_sprite_lists()
 
         # --- Manage Scrolling ---
 
